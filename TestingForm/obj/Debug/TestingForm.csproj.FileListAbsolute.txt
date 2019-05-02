@@ -1,0 +1,14 @@
+C:\Users\Lasitha\source\repos\ConsoleApp1\TestingForm\bin\Debug\TestingForm.exe.config
+C:\Users\Lasitha\source\repos\ConsoleApp1\TestingForm\bin\Debug\TestingForm.exe
+C:\Users\Lasitha\source\repos\ConsoleApp1\TestingForm\bin\Debug\TestingForm.pdb
+C:\Users\Lasitha\source\repos\ConsoleApp1\TestingForm\bin\Debug\duoapi.v1.dll
+C:\Users\Lasitha\source\repos\ConsoleApp1\TestingForm\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Lasitha\source\repos\ConsoleApp1\TestingForm\bin\Debug\duoapi.v1.pdb
+C:\Users\Lasitha\source\repos\ConsoleApp1\TestingForm\obj\Debug\TestingForm.csprojAssemblyReference.cache
+C:\Users\Lasitha\source\repos\ConsoleApp1\TestingForm\obj\Debug\TestingForm.Form1.resources
+C:\Users\Lasitha\source\repos\ConsoleApp1\TestingForm\obj\Debug\TestingForm.Properties.Resources.resources
+C:\Users\Lasitha\source\repos\ConsoleApp1\TestingForm\obj\Debug\TestingForm.csproj.GenerateResource.cache
+C:\Users\Lasitha\source\repos\ConsoleApp1\TestingForm\obj\Debug\TestingForm.csproj.CoreCompileInputs.cache
+C:\Users\Lasitha\source\repos\ConsoleApp1\TestingForm\obj\Debug\TestingForm.csproj.CopyComplete
+C:\Users\Lasitha\source\repos\ConsoleApp1\TestingForm\obj\Debug\TestingForm.exe
+C:\Users\Lasitha\source\repos\ConsoleApp1\TestingForm\obj\Debug\TestingForm.pdb
