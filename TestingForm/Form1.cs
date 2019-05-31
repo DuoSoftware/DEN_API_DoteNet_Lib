@@ -64,7 +64,8 @@ namespace TestingForm
                
                 BlockTokenTicket Block = ledger.BlockAmount(txtlco.Text, Convert.ToDecimal(txtBlockAmout.Text));
                 ledger.SaveTransactions(Block, Convert.ToDecimal(txtBlockAmout.Text), getDebitTrasaction());
-                
+                MessageBox.Show("Saved Sucessfully");
+
             }
             catch (Exception ex)
             {

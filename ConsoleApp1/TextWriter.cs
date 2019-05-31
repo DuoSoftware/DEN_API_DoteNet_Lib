@@ -14,6 +14,7 @@ namespace ConsoleApp1
         StreamWriter sw;
         string path;
         string filename,entity;
+        string topath;
         public TextWriter(string FilePath, string FileName,string Entity, bool overwrite)
         {
             path = FilePath + Entity+"/" + FileName;
@@ -52,17 +53,14 @@ namespace ConsoleApp1
             sw.Close();
         }
         
-
-        public void Upload(string topath)
+        private void uploadtread()
         {
-            sw.Close();
-            //string topath = path; //+"/upload/"+entity+"/";
             if (!Directory.Exists(topath))
             {
                 Directory.CreateDirectory(topath);
             }
 
-            if (!File.Exists(topath+filename))
+            if (!File.Exists(topath + filename))
             {
                 File.Move(path, topath + filename);
             }
@@ -96,10 +94,10 @@ namespace ConsoleApp1
                         catch { }
                         try
                         {
-                            client.DeleteFile("/var/media/files/" + entity + "/" + filename );
+                            client.DeleteFile("/var/media/files/" + entity + "/" + filename);
                         }
                         catch { }
-                        client.UploadFile(file, "/var/media/files/" + entity + "/" + filename );
+                        client.UploadFile(file, "/var/media/files/" + entity + "/" + filename);
                         cmd.WriteLine("Upload Complete.");
                     }
                     //client.
@@ -110,6 +108,24 @@ namespace ConsoleApp1
 
                 cmd.WriteLine("Upload failed : " + e.Message, Info.Error);
             }
+        }
+
+        public void Cancel()
+        {
+            sw.Close();
+            File.Delete(path);
+            
+        }
+
+        public void Upload(string _topath)
+        {
+            sw.Close();
+            topath = _topath;
+            System.Threading.Thread tw = new System.Threading.Thread(new System.Threading.ThreadStart(uploadtread));
+            tw.Start();
+
+            //string topath = path; //+"/upload/"+entity+"/";
+
 
         }
 

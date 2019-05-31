@@ -9,3 +9,14 @@ C:\Users\Lasitha\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\csv_lco.pdb
 C:\Users\Lasitha\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csprojAssemblyReference.cache
 C:\Users\Lasitha\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\duoapi.v1.dll
 C:\Users\Lasitha\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\duoapi.v1.pdb
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\ConsoleApp1\bin\Debug\csv_lco.exe.config
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\ConsoleApp1\bin\Debug\csv_lco.exe
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\ConsoleApp1\bin\Debug\csv_lco.pdb
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\ConsoleApp1\bin\Debug\duoapi.v1.dll
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\ConsoleApp1\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\ConsoleApp1\bin\Debug\duoapi.v1.pdb
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\ConsoleApp1\obj\Debug\ConsoleApp1.csprojAssemblyReference.cache
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CopyComplete
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\ConsoleApp1\obj\Debug\csv_lco.exe
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\ConsoleApp1\obj\Debug\csv_lco.pdb

@@ -8,9 +8,11 @@ namespace duoapi.v1
 {
     public class TranActionResponce
     {
-        public BlockTokenTicket blockticket { get; set; }
+        public bool success { get; set; }
+        public List<LedgerTransactions>  result { get; set; }
+        /*public BlockTokenTicket blockticket { get; set; }
         public decimal amount { get; set; }
-        public List<LedgerTransactions> transactions { get; set; }
+        public List<LedgerTransactions> transactions { get; set; }*/
 
     }
 

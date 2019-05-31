@@ -24,6 +24,8 @@ namespace duoapi.v1
             credit = _credit;
             debit = _debit;
             description = _description;
+            trandatetime = DateTime.Now;
+            createdate = DateTime.Now;
             /*
             gulcoid = _gulcoid;
             gulcoid = _gulcoid;

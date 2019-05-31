@@ -21,7 +21,7 @@ namespace ConsoleApp1
         private int LastID = 0;
         private  string FileName = "";
         private string severname = "";
-
+        int pagesisize = 11943;
         public ExportLCORenewRecharge(string _LCOID,string _Entity,string _server)
         {
             GuaLCOID = _LCOID;
@@ -43,7 +43,9 @@ namespace ConsoleApp1
                     IList<JToken> items = o["result"]["results"].Children().ToList();
                     if (o["result"]["record_count"] != null)
                     {
+                       
                         RecordCount = (int)o["result"]["record_count"];
+                        pagesisize = RecordCount;
                         FileName = (string)o["result"]["Name"];
                         try
                         {
@@ -79,6 +81,7 @@ namespace ConsoleApp1
                     }
                     foreach (JToken val in items)
                     {
+                        pagesisize -= 1;
                         JObject v = val as JObject;
                         string HeaderList = "";
                         DateTime expdate = DateTime.Now;
@@ -160,9 +163,9 @@ namespace ConsoleApp1
             string path = AppDomain.CurrentDomain.BaseDirectory + "/files_processing/" + entity+"/"+GuaLCOID + "";
             string topath = AppDomain.CurrentDomain.BaseDirectory + "/files/" + entity+"/";
             string backuppath = AppDomain.CurrentDomain.BaseDirectory + "/backup/";
-            int pagesisize = 11943;
+            
             int LastID = -1;
-            int PAGE = 50;
+            int PAGE = 100;
             int TreadID = 1;
             if (!Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "/files_processing/" + entity))
                 Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/files_processing/" + entity);
@@ -179,33 +182,54 @@ namespace ConsoleApp1
             {
                 if (File.Exists(topath))
                 {
-
-                    cmd.WriteLine("Skiped File", Info.Warning);
-
-                    return;
+                    DateTime fatdate = File.GetLastWriteTime(topath).AddDays(4);
+                    if (fatdate > DateTime.Now)
+                    {
+                        cmd.WriteLine("Skiped File", Info.Warning);
+                        return;
+                    }
                 }
             }
             
             if (ConfigurationSettings.AppSettings["skip"] == "1")
             {
                if( File.Exists(topath + GuaLCOID + ".csv")){
-                    
-                    cmd.WriteLine("Skiped File", Info.Warning);
-                    
-                    return;
+                    DateTime fatdate = File.GetLastWriteTime(topath + GuaLCOID + ".csv").AddDays(4);
+                    cmd.WriteLine("Checking date to Skip or not file date " + fatdate.ToString(), Info.Warning);
+                    if (fatdate > DateTime.Now)
+                    {
+                        cmd.WriteLine("Skiped File", Info.Warning);
+
+                        return;
+                    }
                 }
             }
-            sw = new TextWriter(AppDomain.CurrentDomain.BaseDirectory + "/files_processing/" + entity + "/", GuaLCOID + ".csv", entity, true);
-            swDayExp7 = new TextWriter(AppDomain.CurrentDomain.BaseDirectory + "/files_processing/" + entity + "/", GuaLCOID + "_7day.csv", entity, true);
-            swexp = new TextWriter(AppDomain.CurrentDomain.BaseDirectory + "/files_processing/" + entity + "/", GuaLCOID + "_exp.csv", entity, true);
+            try
+            {
+                sw = new TextWriter(AppDomain.CurrentDomain.BaseDirectory + "/files_processing/" + entity + "/", GuaLCOID + ".csv", entity, true);
+                swDayExp7 = new TextWriter(AppDomain.CurrentDomain.BaseDirectory + "/files_processing/" + entity + "/", GuaLCOID + "_7day.csv", entity, true);
+                swexp = new TextWriter(AppDomain.CurrentDomain.BaseDirectory + "/files_processing/" + entity + "/", GuaLCOID + "_exp.csv", entity, true);
+            }
+            catch 
+            {
+                cmd.WriteLine("Already Processing Skiping Process", Info.Warning);
+                return;
+            }
             string calltype = ConfigurationSettings.AppSettings["call"];
-            MakeRequestTread(GuaLCOID, calltype);
-
-            pagesisize = RecordCount-50;
-            cmd.WriteLine("Start: " + DateTime.Now.ToString() + "- Requests made for costomer accounts " + pagesisize);
+            string lcofcal=MakeRequestTread(GuaLCOID, calltype);
+            if (lcofcal == null)
+            {
+                sw.Cancel();
+                swDayExp7.Cancel();
+                swexp.Cancel();
+                cmd.WriteLine("Error Occurded file creation cancelled", Info.Error);
+                return;
+            }
+                //pagesisize = RecordCount-PAGE;
+                cmd.WriteLine("Start: " + DateTime.Now.ToString() + "- Requests made for costomer accounts " + pagesisize);
             if (RecordCount != 0)
             {
-                while (pagesisize >= 0)
+                while (pagesisize != 0)
                 {
                     List<Action> list = new List<Action>();
                     int i = 0;
@@ -213,20 +237,30 @@ namespace ConsoleApp1
                     {
                         //i/f (!File.Exists(topath + GuaLCOID + ".csv"))
                         //{
-                            string str = MakeRequestTread(GuaLCOID, calltype);
-                            if (str != null)
+                        int tmppagesize = pagesisize;
+                        string str = MakeRequestTread(GuaLCOID, calltype);
+                        if (str != null)
+                        {
+                            //pagesisize -= PAGE;
+                            if (tmppagesize == pagesisize)
                             {
-                                pagesisize -= 50;
-                                cmd.WriteLine("Start -> Request: " + DateTime.Now.ToString() + " - remaining " + pagesisize);
+                                
+                                sw.Cancel();
+                                swDayExp7.Cancel();
+                                swexp.Cancel();
+                                cmd.WriteLine("Error Occurded file creation cancelled", Info.Error);
+                                return;
                             }
-                            else
-                            {
-                                cmd.WriteLine("Start -> Request: " + DateTime.Now.ToString() + " - remaining " + pagesisize, Info.Error);
-                            }
+                            cmd.WriteLine("Start -> Request: " + DateTime.Now.ToString() + " - remaining " + pagesisize);
+                        }
+                        else
+                        {
+                            cmd.WriteLine("Start -> Request: " + DateTime.Now.ToString() + " - remaining " + pagesisize, Info.Error);
+                        }
                         //}
                         //else
                         //{
-                            cmd.WriteLine("Start -> Request: " + DateTime.Now.ToString() + " - remaining " + pagesisize, Info.Warning);
+                        cmd.WriteLine("Start -> Request: " + DateTime.Now.ToString() + " - remaining " + pagesisize, Info.Warning);
 
                         //}
                     }

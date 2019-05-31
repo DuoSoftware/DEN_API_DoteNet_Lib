@@ -19,6 +19,7 @@ namespace ConsoleApp1
                 HttpWebRequest request = WebRequest.Create(requestUrl) as HttpWebRequest;
                 //WebRequest WR = WebRequest.Create(requestUrl);   
                 request.Headers["entity"] = Entity;
+                request.Headers["duoapikey"] = "bulk_estimation_api_0102";
                 var sb = "";// JsonConvert.SerializeObject(JSONRequest); 
                 request.Method = JSONmethod;
                 if (JSONmethod == "POST")

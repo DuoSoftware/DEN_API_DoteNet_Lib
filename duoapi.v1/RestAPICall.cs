@@ -33,7 +33,8 @@ namespace duoapi.v1
 
         public T POST<T>(string requestURI,object PostObj)
         {
-            string Reqjson= JsonConvert.SerializeObject(PostObj);
+            var settings = new JsonSerializerSettings { DateFormatString = "MM-dd-yyyy hh:mm:ss.fff" };
+            string Reqjson= JsonConvert.SerializeObject(PostObj, settings);
             string str = MakeRequest(APIUri + requestURI, Reqjson, "POST", "application/json", Entity);
             T results = JsonConvert.DeserializeObject<T>(str);
             return results;

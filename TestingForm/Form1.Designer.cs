@@ -207,9 +207,9 @@
             // 
             // txtNumber
             // 
-            this.txtNumber.Location = new System.Drawing.Point(138, 344);
+            this.txtNumber.Location = new System.Drawing.Point(370, 344);
             this.txtNumber.Name = "txtNumber";
-            this.txtNumber.Size = new System.Drawing.Size(347, 22);
+            this.txtNumber.Size = new System.Drawing.Size(115, 22);
             this.txtNumber.TabIndex = 0;
             // 
             // label6
@@ -217,9 +217,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(43, 345);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 17);
+            this.label6.Size = new System.Drawing.Size(168, 17);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Bock Amout\'";
+            this.label6.Text = "Number of fake Trasction";
             // 
             // Form1
             // 

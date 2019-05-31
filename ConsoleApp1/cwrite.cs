@@ -22,10 +22,17 @@ namespace ConsoleApp1
             {
                 case Info.Error:
                     Console.ForegroundColor = ConsoleColor.Red;
-                    TextWriter err = new TextWriter(AppDomain.CurrentDomain.BaseDirectory, "error_" + DateTime.Now.ToString("MMddyyyy") + ".log", "Logs", false);
+                    try
+                    {
+                        TextWriter err = new TextWriter(AppDomain.CurrentDomain.BaseDirectory, "error_" + DateTime.Now.ToString("MMddyyyy") + ".log", "Logs", false);
 
-                    err.WriteLine(DateTime.Now.ToString() +"-"+ Text);
-                    err.Close();
+                        err.WriteLine(DateTime.Now.ToString() + "-" + Text);
+                        err.Close();
+                    }
+                    catch 
+                    {
+
+                    }
                     Console.WriteLine(Text);
                     Console.ForegroundColor = ConsoleColor.White;
                     break;

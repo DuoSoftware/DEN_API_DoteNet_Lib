@@ -6,3 +6,11 @@ C:\Users\Lasitha\source\repos\ConsoleApp1\duoapi.v1\obj\Debug\duoapi.v1.csproj.C
 C:\Users\Lasitha\source\repos\ConsoleApp1\duoapi.v1\obj\Debug\duoapi.v1.dll
 C:\Users\Lasitha\source\repos\ConsoleApp1\duoapi.v1\obj\Debug\duoapi.v1.pdb
 C:\Users\Lasitha\source\repos\ConsoleApp1\duoapi.v1\obj\Debug\duoapi.v1.csprojAssemblyReference.cache
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\duoapi.v1\bin\Debug\duoapi.v1.dll
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\duoapi.v1\bin\Debug\duoapi.v1.pdb
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\duoapi.v1\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\duoapi.v1\obj\Debug\duoapi.v1.csproj.CoreCompileInputs.cache
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\duoapi.v1\obj\Debug\duoapi.v1.csproj.CopyComplete
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\duoapi.v1\obj\Debug\duoapi.v1.dll
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\duoapi.v1\obj\Debug\duoapi.v1.pdb
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\duoapi.v1\obj\Debug\duoapi.v1.csprojAssemblyReference.cache

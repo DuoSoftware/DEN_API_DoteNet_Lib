@@ -12,3 +12,17 @@ C:\Users\Lasitha\source\repos\ConsoleApp1\TestingForm\obj\Debug\TestingForm.cspr
 C:\Users\Lasitha\source\repos\ConsoleApp1\TestingForm\obj\Debug\TestingForm.csproj.CopyComplete
 C:\Users\Lasitha\source\repos\ConsoleApp1\TestingForm\obj\Debug\TestingForm.exe
 C:\Users\Lasitha\source\repos\ConsoleApp1\TestingForm\obj\Debug\TestingForm.pdb
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\TestingForm\bin\Debug\TestingForm.exe.config
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\TestingForm\bin\Debug\TestingForm.exe
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\TestingForm\bin\Debug\TestingForm.pdb
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\TestingForm\bin\Debug\duoapi.v1.dll
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\TestingForm\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\TestingForm\bin\Debug\duoapi.v1.pdb
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\TestingForm\obj\Debug\TestingForm.csprojAssemblyReference.cache
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\TestingForm\obj\Debug\TestingForm.Form1.resources
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\TestingForm\obj\Debug\TestingForm.Properties.Resources.resources
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\TestingForm\obj\Debug\TestingForm.csproj.GenerateResource.cache
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\TestingForm\obj\Debug\TestingForm.csproj.CoreCompileInputs.cache
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\TestingForm\obj\Debug\TestingForm.csproj.CopyComplete
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\TestingForm\obj\Debug\TestingForm.exe
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\TestingForm\obj\Debug\TestingForm.pdb

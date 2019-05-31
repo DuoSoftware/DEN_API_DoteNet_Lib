@@ -84,9 +84,16 @@ namespace ConsoleApp1
                     {
                         while (true)
                         {
-                            List<string> strlist = lobj.LCOPending();
-                            RunProcess(strlist,entity);
-                            Thread.Sleep(10000);
+                            try
+                            {
+                                List<string> strlist = lobj.LCOPending();
+                                RunProcess(strlist, entity);
+                                Thread.Sleep(10000);
+                            }catch(Exception ec)
+                            {
+                                cmd.WriteLine(ec.Message, Info.Error);
+                                Thread.Sleep(60000);
+                            }
                         }
                     }
                     else
