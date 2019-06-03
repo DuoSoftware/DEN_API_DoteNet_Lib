@@ -13,3 +13,4 @@ D:\Projects\DotNet\DEN_API_DoteNet_Lib\duoapi.v1\obj\Debug\duoapi.v1.csproj.Core
 D:\Projects\DotNet\DEN_API_DoteNet_Lib\duoapi.v1\obj\Debug\duoapi.v1.csproj.CopyComplete
 D:\Projects\DotNet\DEN_API_DoteNet_Lib\duoapi.v1\obj\Debug\duoapi.v1.dll
 D:\Projects\DotNet\DEN_API_DoteNet_Lib\duoapi.v1\obj\Debug\duoapi.v1.pdb
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\duoapi.v1\obj\Debug\duoapi.v1.csprojAssemblyReference.cache
