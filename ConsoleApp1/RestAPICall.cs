@@ -35,16 +35,11 @@ namespace ConsoleApp1
 
                 using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
                 {
-
                     if (response.StatusCode != HttpStatusCode.OK) throw new Exception(String.Format(
                         "Server error (HTTP {0}: {1}).", response.StatusCode,
                     response.StatusDescription));
-
-                    // DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(Response));// object objResponse = JsonConvert.DeserializeObject();Stream stream1 = response.GetResponseStream();   
-                    //Stream stream1 =new Stream();
                     StreamReader sr = new StreamReader(response.GetResponseStream());
                     string strsb = sr.ReadToEnd();
-                    //object objResponse = JsonConvert.DeserializeObject(strsb, JSONResponseType);
                     Console.WriteLine("End -> Request: " + DateTime.Now.ToString() + " - Remaining " + requestUrl);
                     Console.WriteLine("---------------------------------------------------");
                     return strsb;
@@ -52,7 +47,6 @@ namespace ConsoleApp1
             }
             catch (Exception e)
             {
-
                throw e;
             }
         }
