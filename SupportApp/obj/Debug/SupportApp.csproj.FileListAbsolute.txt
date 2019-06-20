@@ -1,10 +1,10 @@
 D:\Projects\DotNet\DEN_API_DoteNet_Lib\SupportApp\bin\Debug\SupportApp.exe.config
 D:\Projects\DotNet\DEN_API_DoteNet_Lib\SupportApp\bin\Debug\SupportApp.exe
 D:\Projects\DotNet\DEN_API_DoteNet_Lib\SupportApp\bin\Debug\SupportApp.pdb
+D:\Projects\DotNet\DEN_API_DoteNet_Lib\SupportApp\obj\Debug\SupportApp.csprojAssemblyReference.cache
 D:\Projects\DotNet\DEN_API_DoteNet_Lib\SupportApp\obj\Debug\SupportApp.Form1.resources
 D:\Projects\DotNet\DEN_API_DoteNet_Lib\SupportApp\obj\Debug\SupportApp.Properties.Resources.resources
 D:\Projects\DotNet\DEN_API_DoteNet_Lib\SupportApp\obj\Debug\SupportApp.csproj.GenerateResource.cache
 D:\Projects\DotNet\DEN_API_DoteNet_Lib\SupportApp\obj\Debug\SupportApp.csproj.CoreCompileInputs.cache
 D:\Projects\DotNet\DEN_API_DoteNet_Lib\SupportApp\obj\Debug\SupportApp.exe
 D:\Projects\DotNet\DEN_API_DoteNet_Lib\SupportApp\obj\Debug\SupportApp.pdb
-D:\Projects\DotNet\DEN_API_DoteNet_Lib\SupportApp\obj\Debug\SupportApp.csprojAssemblyReference.cache

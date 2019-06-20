@@ -182,7 +182,7 @@ namespace ConsoleApp1
             {
                 if (File.Exists(topath))
                 {
-                    DateTime fatdate = File.GetLastWriteTime(topath).AddDays(4);
+                    DateTime fatdate = File.GetLastWriteTime(topath).AddDays(2);
                     if (fatdate > DateTime.Now)
                     {
                         cmd.WriteLine("Skiped File", Info.Warning);
@@ -194,7 +194,7 @@ namespace ConsoleApp1
             if (ConfigurationSettings.AppSettings["skip"] == "1")
             {
                if( File.Exists(topath + GuaLCOID + ".csv")){
-                    DateTime fatdate = File.GetLastWriteTime(topath + GuaLCOID + ".csv").AddDays(4);
+                    DateTime fatdate = File.GetLastWriteTime(topath + GuaLCOID + ".csv").AddDays(2);
                     cmd.WriteLine("Checking date to Skip or not file date " + fatdate.ToString(), Info.Warning);
                     if (fatdate > DateTime.Now)
                     {

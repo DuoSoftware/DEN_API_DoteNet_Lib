@@ -13,22 +13,44 @@ namespace duoapi.v1
         basepackage,
         Alacarte
     }
-    class Estimate
+
+    public class Estimate
     {
-        public DataSet GetRechargeEstimate(string VcNumber, EstimateType estimateType)
+        private RestAPICall apicall;
+        //private LedgerType _ledgerType;
+        private string _entity;
+        private string _applicationToken;
+        private string uri_str;
+        private string username;
+
+        public Estimate( string entity, string ApplicationToken, string UserName)
         {
-            return new DataSet();
+            //_ledgerType = ledgerType;
+            _entity = entity;
+            _applicationToken = ApplicationToken;
+            apicall = new RestAPICall(ApplicationToken, UserName, entity);
+            username = UserName;
+            
         }
 
 
-        public DataSet GetRenewEstimate(string VcNumber, EstimateType estimateType)
+        public EstimateSingleResponcecs getPrice(string vcno,EstimateType estype)
         {
-            return new DataSet();
-        }
-
-        public DataSet GetEstimateForLCOAll(string GULCOID,int PageID)
-        {
-            return new DataSet();
+            switch (estype)
+            {
+                
+                case EstimateType.basepackage:
+                        return apicall.Get<EstimateSingleResponcecs>("account/renewcalculator/base_package/" + vcno);
+                    break;
+                case EstimateType.Alacarte:
+                        return apicall.Get<EstimateSingleResponcecs>("account/renewcalculator/alacarte_package/" + vcno);
+                    break;
+                default:
+                    return apicall.Get<EstimateSingleResponcecs>("account/renewcalculator/quick/" + vcno);
+                    break;
+            }
+            
+            //return 
         }
 
     }

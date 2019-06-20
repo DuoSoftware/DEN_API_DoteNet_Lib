@@ -97,6 +97,7 @@ namespace duoapi.v1
             tranReq.blockticket = BlockToken;
             tranReq.amount = ActualUtilizedAmount;
             tranReq.transactions = Transactions;
+            //tranReq.GUVaultID=
             if (ActualUtilizedAmount < 0)
             {
                 if (BlockToken.BlockID !=0)
@@ -125,7 +126,8 @@ namespace duoapi.v1
             decimal Amount = 0;
             BlockTokenTicket bk = new BlockTokenTicket();
             bk.GUVaultID = GUVaultID;
-            bk.BlockID = -1;
+            bk.BlockID = 0;
+            bk.Amount = 0;
             foreach (var item in Tranactions)
             {
                 //if()
@@ -145,8 +147,20 @@ namespace duoapi.v1
             decimal Amount = Tranaction.debit- Tranaction.credit;
             BlockTokenTicket bk = new BlockTokenTicket();
             bk.GUVaultID = GUVaultID;
-            bk.BlockID = -1;
+            bk.BlockID = 0;
+            bk.Amount = 0;
             return SaveTransactions(bk, Amount, Tranactions);
+        }
+
+        public LedgerTranactionResponce GetLedgerTraactions(string GUVaultID, int pageid) {
+            var result = apicall.Get<LedgerTranactionResponce>("vault/lco/ledger/"+GUVaultID+"/"+pageid.ToString());
+            return result;
+        }
+
+        public LedgerActiveBlocksResponce GetActiveBlocks(string GUVaultID)
+        {
+            var result = apicall.Get<LedgerActiveBlocksResponce>("vault/lco/activeblocks/" + GUVaultID);
+            return result;
         }
     }
 }

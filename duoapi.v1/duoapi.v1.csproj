@@ -45,10 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountWiseDebitsTrans.cs" />
+    <Compile Include="apidatetime.cs" />
     <Compile Include="BlockTokenTicket.cs" />
     <Compile Include="BulkBucket.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Estimate.cs" />
+    <Compile Include="EstimateResponcecs.cs" />
+    <Compile Include="LedgerActiveBlocks.cs" />
+    <Compile Include="LedgerTranactionResponce.cs" />
+    <Compile Include="LedgerTransactionsAPI.cs" />
     <Compile Include="Leger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestAPICall.cs" />

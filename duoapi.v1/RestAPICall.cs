@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.IO;
 using System.Linq;
@@ -22,11 +23,16 @@ namespace duoapi.v1
             Apikey = apikey;
             UserName = username;
             Entity = entity;
+            if (ConfigurationSettings.AppSettings["duoapiuri"] != null)
+            {
+                APIUri = ConfigurationSettings.AppSettings["duoapiuri"];
+            }
         }
         public  T Get<T>(string requestURI)
         {
             string str = MakeRequest(APIUri + requestURI, "", "GET", "application/json", Entity);
-            T results = JsonConvert.DeserializeObject<T>(str);
+            var settings = new JsonSerializerSettings { DateFormatString = "MM-dd-yyyy hh:mm:ss.fff" };
+            T results = JsonConvert.DeserializeObject<T>(str, settings);
             return results;
         }
 
