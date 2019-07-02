@@ -15,6 +15,7 @@ namespace duoapi.v1
         private string guaccountid;
         private string username;
         private decimal amount=0;
+        private TranActionResponce tranactionresp;
 
         public AccountWiseDebitsTrans( string entity, string ApplicationToken, string UserName,string _gulcoid, string _guaccountid,decimal BlockAmout)
         {
@@ -45,11 +46,26 @@ namespace duoapi.v1
             var tranop = ledg.SaveTransactions(Block, amount, Trans);
             if (tranop.success)
             {
+                tranactionresp = tranop;
                 return tranop;
             }
             else
             {
                 throw new Exception(tranop.message);
+            }
+        }
+
+        public bool RollBack()
+        {
+
+            ///var tranop = ledg.SaveTransactions(Block, amount, Trans);
+            if (tranactionresp !=null)
+            {
+                return ledg.RollBackTran(tranactionresp.result.TranID);
+            }
+            else
+            {
+                return false;// throw new Exception(tranop.message);
             }
         }
 

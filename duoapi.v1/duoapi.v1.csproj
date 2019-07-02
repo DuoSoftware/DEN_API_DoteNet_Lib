@@ -53,6 +53,7 @@
     <Compile Include="Estimate.cs" />
     <Compile Include="EstimateResponcecs.cs" />
     <Compile Include="LedgerActiveBlocks.cs" />
+    <Compile Include="LedgerTranactionResponce - Copy.cs" />
     <Compile Include="LedgerTranactionResponce.cs" />
     <Compile Include="LedgerTransactionsAPI.cs" />
     <Compile Include="Leger.cs" />

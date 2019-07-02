@@ -162,5 +162,11 @@ namespace duoapi.v1
             var result = apicall.Get<LedgerActiveBlocksResponce>("vault/lco/activeblocks/" + GUVaultID);
             return result;
         }
+
+        public bool RollBackTran(long id)
+        {
+            var result = apicall.Get<LedgerRollBackResponce>("vault/lco/rollback/" + id);
+            return result.result;
+        }
     }
 }

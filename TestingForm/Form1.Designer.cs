@@ -145,6 +145,7 @@
             // 
             // cmboentity
             // 
+            this.cmboentity.Enabled = false;
             this.cmboentity.FormattingEnabled = true;
             this.cmboentity.Items.AddRange(new object[] {
             "dendb",
@@ -188,7 +189,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(491, 291);
+            this.button2.Location = new System.Drawing.Point(813, 343);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(135, 23);
             this.button2.TabIndex = 2;

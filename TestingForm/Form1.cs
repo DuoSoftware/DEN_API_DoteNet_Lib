@@ -195,6 +195,9 @@ namespace TestingForm
                     {
                         MessageBox.Show("Saved with Number " + respo.result.TranID.ToString());
                     }
+                    else {
+                        MessageBox.Show("Saved with Number " + respo.message);
+                    }
 
                 }
                 catch (Exception ex)
@@ -278,7 +281,7 @@ namespace TestingForm
                 var tranop = ledger.SaveTransactions(Block, 0, new List<LedgerTransactions>());
                 if (tranop.success)
                 {
-                    MessageBox.Show("Cleared Sucessfully");
+                    MessageBox.Show("Cleared Sucessfully.");
                 }
                 else
                 {
